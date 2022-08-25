@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link rel="stylesheet" href="./css/bootstrap.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="text-center text-5xl font-extralight">Make Your Task Schedule</h1>
+    </header>
+    <main class="w-3/4 mx-auto mt-5">
+        <div>
+            <div class="mb-4 w-full bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+                <div class="py-2 px-4 bg-white rounded-t-lg dark:bg-gray-800">
+                    <label for="task" class="sr-only">Task List</label>
+                    <textarea id="task" rows="4"
+                        class="p-5 w-full text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400"
+                        placeholder="Write your task..."></textarea>
+                </div>
+                <div class="flex justify-between items-center py-2 px-3 border-t dark:border-gray-600">
+                    <button id="addTaskButton"
+                        class="py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                        Add Task
+                    </button>
+                    <button id="updateButton"
+                        class=" py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                        Update
+                    </button>
+                    <div class="flex pl-0 space-x-1 sm:pl-2">
+                        <input type="time" id="setTime"
+                            class="px-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800"
+                            placeholder="Select time">
+
+                        <input datepicker datepicker-autohide datepicker-format="dd/mm/yyyy" type="text" id="setDate"
+                            class="text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800"
+                            placeholder="Select date">
+
+                        <select id="setPriority"
+                            class="px-2.5 py-2.5 text-xs font-medium  text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                            <option selected="">Set Priority</option>
+                            <option value="Urgent">Urgent</option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <ol id="taskBody" class="taskBody list-decimal list-outside">
+
+            </ol>
+        </div>
+    </main>
+
+    <!-- <script src="./js/bootstrap.bundle.js"></script> -->
+    <script src="./js/tailwind.js"></script>
+    <script src="https://kit.fontawesome.com/0a8d48f1b6.js" crossorigin="anonymous"></script>
+    <script src="./js/datepicker.js"></script>
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>
