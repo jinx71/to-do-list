@@ -16,33 +16,39 @@ console.log(time);
 setDate.value = date;
 console.log(date);
 function rm(element) {
-    element.parentElement.parentElement.parentElement.parentElement.remove();
+    element.parentElement.parentElement.parentElement.remove();
 }
 
 function update(element) {
-
-    let taskItem = element.parentElement.parentElement.parentElement.children[0];
+    let taskItem = element.parentElement.parentElement.children[1];
+    console.log(taskItem)
     let taskItemContainer = element.parentElement.parentElement.parentElement;
+    console.log(taskItemContainer)
     taskItemContainer.classList.add("update");
-    addTaskButton.style.display = "none";
-    updateButton.style.display = "flex";
+    addTaskButton.classList.add('hidden');
+    updateButton.classList.remove('hidden');
     task.value = taskItem.innerText;
 
 }
 
 
 
-// This block needs some button style and disable function.
+
 function completed(element) {
-    let completedTask = element.parentElement.parentElement.parentElement;
-    completedTask.style.backgroundColor = 'darksalmon'
+    let completedTask = element.parentElement.parentElement;
+    completedTask.classList.add('bg-red-200');
+    let buttons = element.parentElement.parentElement.querySelectorAll('button');
+    for (let button of buttons) {
+        button.setAttribute('disabled', true);
+    }
 }
 updateButton.addEventListener('click', function () {
     let updateList = document.querySelector('.update h2');
+    console.log(updateList);
     // let a = task.value;
     updateList.innerHTML = task.value;
-    addTaskButton.style.display = "flex";
-    updateButton.style.display = "none";
+    addTaskButton.classList.remove('hidden');
+    updateButton.classList.add('hidden');
     task.value = "";
     // count();
 })
